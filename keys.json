@@ -1,0 +1,11 @@
+{
+  "test": {
+    "generateTimes": 3
+  },
+  "org.suru.devs": {
+    "generateTimes": "infinite"
+  },
+  "sukilovot": {
+    "generateTimes": "infinite"
+  }
+}
