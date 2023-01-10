@@ -9,7 +9,7 @@ import datetime
 api = FastAPI()
 
 key_json = json.loads(open("keys.json", "r").read())
-keys = ["test", "org.suru.devs", "sukilovot"]
+keys = ["r7NIL9CHmqNdNy8jKvDapX-krI2zWNsxcwrSN1WDO2A=", "FJ3LLBnGL-etfp1LE56_lqh2smb7-wpKJhaqMDLSFLs=", "NCfcxQFRLCZMSC0p-vu7feQBX8LShv4_5pbMad3PI2Q="]
 
 @api.get("/key_verify/k={key}")
 def verify(key):
@@ -18,10 +18,14 @@ def verify(key):
     except:
         return {"error": "key don't exist"}
 
+@api.get("/credits")
+def credits():
+    return {"creators": "sukilovot ORG SURU"}
+
 @api.get("/generate/c={country},k={key}")
 def fakedatas(country, key):
     if key in keys:
-        if key == "test" and key_json[key]["generateTimes"] > 0:
+        if key == "r7NIL9CHmqNdNy8jKvDapX-krI2zWNsxcwrSN1WDO2A=" and key_json[key]["generateTimes"] > 0:
             key_json[key]['generateTimes'] -= 1
 
         if key_json[key]['generateTimes'] == "infinite" or key_json[key]['generateTimes'] > 0:
