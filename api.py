@@ -75,4 +75,4 @@ def fakedatas(country, key):
         err_date_and_time = datetime.datetime.now()
         return {"error": "key invalid or country invalid", "dateAndTime": err_date_and_time}
 
-run(api)
+run(api, port=8080)
